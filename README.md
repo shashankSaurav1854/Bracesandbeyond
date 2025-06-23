@@ -2,7 +2,7 @@
 
 A modern, responsive dental practice landing page built with Next.js, TypeScript, and Tailwind CSS. Designed to help dental practices attract new patients and showcase their services professionally.
 
-# Link - https://shashanksaurav1854.github.io/Bracesandbeyond/
+## Link - **https://shashanksaurav1854.github.io/Bracesandbeyond/
 
 ## ✨ Features
 
