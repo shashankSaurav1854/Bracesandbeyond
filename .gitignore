@@ -121,3 +121,7 @@ Thumbs.db
 
 # Turbo
 .turbo
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
