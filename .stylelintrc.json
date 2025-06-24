@@ -1,6 +1,7 @@
 {
   "extends": ["stylelint-config-standard"],
   "rules": {
+    "import-notation": ["string", { "severity": "warning" }],
     "at-rule-no-unknown": [
       true,
       {
