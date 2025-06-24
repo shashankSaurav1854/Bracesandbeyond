@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,11 +36,31 @@ export default function Navigation() {
     { href: '#contact', label: 'Contact' },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetId = href.substring(1); // Remove the '#'
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      const navHeight = 60; // Account for fixed nav height
+      const targetPosition = targetElement.offsetTop - navHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    }
+
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav
       className={`bg-white shadow-md fixed left-0 w-full z-40 transition-all duration-300 ${
         isSticky ? 'top-0' : offset === 64 ? 'top-16' : 'top-24'
       }`}
+      style={{ scrollBehavior: 'smooth' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -54,7 +74,8 @@ export default function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-200"
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition duration-200 cursor-pointer"
                 >
                   {link.label}
                 </a>
@@ -87,8 +108,8 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="text-gray-700 hover:text-blue-600 block px-3 py-2 text-base font-medium cursor-pointer"
               >
                 {link.label}
               </a>

@@ -1,3 +1,5 @@
+'use client';
+
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
@@ -24,6 +26,26 @@ export default function Footer() {
     { icon: <FaTwitter />, href: 'https://twitter.com/' },
   ];
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle smooth scroll for anchor links (starting with #)
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1); // Remove the '#'
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        const navHeight = 60; // Account for fixed nav height
+        const targetPosition = targetElement.offsetTop - navHeight;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        });
+      }
+    }
+    // For external links (social media), let them behave normally
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +65,7 @@ export default function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-2xl hover:text-blue-500 transition-transform"
+                  className="text-2xl hover:text-blue-500 transition-transform hover:scale-110"
                   aria-label="Social link"
                 >
                   {link.icon}
@@ -59,7 +81,8 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition duration-200"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-gray-400 hover:text-white transition duration-200 cursor-pointer"
                   >
                     {link.label}
                   </a>
@@ -75,7 +98,8 @@ export default function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition duration-200"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-gray-400 hover:text-white transition duration-200 cursor-pointer"
                   >
                     {link.label}
                   </a>
