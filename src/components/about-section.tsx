@@ -3,14 +3,13 @@ import Image from 'next/image';
 export default function AboutSection() {
   const credentials = [
     'BDS, MDS in Orthodontics',
-    'Specializing in Aesthetic Dentistry',
-    'Certified in Advanced Cosmetic Dentistry',
+    'Certification in Advanced Endodontics Treatment',
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-amber-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Meet Dr. Puja Priya
@@ -31,17 +30,15 @@ export default function AboutSection() {
               ))}
             </div>
           </div>
-          {/* <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center"> */}
-          <div className="rounded-lg h-96 overflow-hidden">
+          <div className="rounded-lg overflow-hidden h-128">
             <Image
-              src="/drPP.jpg"
+              src="/drPP.jpeg"
               alt="Dr. Puja Priya"
-              width={512}
-              height={384}
-              className="object-cover w-full h-full"
+              width={535}
+              height={693}
+              className="object-cover w-full h-full "
             />
           </div>
-          {/* </div> */}
         </div>
       </div>
     </section>
