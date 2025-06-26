@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: <FaFacebook />, href: 'https://facebook.com/' },
+    { icon: <FaFacebook />, href: 'https://www.facebook.com/profile.php?id=61577760813712' },
     {
       icon: <FaInstagram />,
       href: 'https://www.instagram.com/bracesbeyondgurugram?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
