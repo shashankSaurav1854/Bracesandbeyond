@@ -1,28 +1,8 @@
 'use client';
 
 export default function HeroSection() {
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // Only handle smooth scroll for anchor links (starting with #)
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1); // Remove the '#'
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        const navHeight = 60; // Account for fixed nav height
-        const targetPosition = targetElement.offsetTop - navHeight;
-
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-        });
-      }
-    }
-    // For external links (social media), let them behave normally
-  };
-
   return (
-    <section id="home" className="bg-gradient-to-r from-blue-50 to-white py-20 pt-32 sm:pt-64">
+    <section id="home" className="bg-gradient-to-r bg-amber-50 py-20 pt-32 sm:pt-64">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-center text-center mb-4">
           <h2 className="text-4xl md:text-6xl font-extrabold text-blue-600 tracking-wide">
@@ -43,15 +23,16 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#contact"
-              onClick={(e) => handleSmoothScroll(e, '#contact')}
+              href="https://booking.appointy.com/en-US/bracesandbeyond/bookings/calendar"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
             >
               Book Appointment
             </a>
             <a
               href="tel:+919053419388"
-              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300"
+              className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 "
             >
               Call Now
             </a>

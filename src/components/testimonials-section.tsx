@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="py-20 bg-amber-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-50 rounded-lg p-6 h-400">
+              <div className="bg-white rounded-lg p-6 h-400">
                 <div className="flex mb-4">{renderStars(testimonial.rating)}</div>
                 <p className="text-gray-700 mb-4 italic">&ldquo;{testimonial.text}&rdquo;</p>
                 <p className="text-gray-900 font-semibold">- {testimonial.name}</p>
