@@ -28,7 +28,7 @@ export default function Gallery() {
     },
     {
       id: 3,
-      src: '/gallery/drPP.jpeg',
+      src: '/gallery/drPPproffesional.jpeg',
       alt: 'meet Dr. Puja Priya',
       category: ['Clinic', 'Office'],
     },
